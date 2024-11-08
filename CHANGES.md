@@ -24,6 +24,10 @@ See also the [unreleased changes].
 
 % Security   Security in case of vulnerabilities.
 
+## [0.8.4] (2024-11-08)
+
+- Python 3.13 compatibility
+
 ## [0.8.3] (2024-08-27)
 
 - New build with Transonic 0.7.2 to fix Windows wheels
@@ -340,4 +344,5 @@ Merge with geofluidsim (Ashwin Vishnu Mohanan repository)
 [0.8.1]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.0...0.8.1
 [0.8.2]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.1...0.8.2
 [0.8.3]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.2...0.8.3
-[unreleased changes]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.3...branch%2Fdefault
+[0.8.4]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.3...0.8.4
+[unreleased changes]: https://foss.heptapod.net/fluiddyn/fluidsim/-/compare/0.8.4...branch%2Fdefault

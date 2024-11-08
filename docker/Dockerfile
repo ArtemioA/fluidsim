@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.10
 LABEL Pierre Augier <pierre.augier@univ-grenoble-alpes.fr>
 
 RUN apt-get update
@@ -60,4 +60,4 @@ RUN wget https://foss.heptapod.net/fluiddyn/fluidfft/raw/branch/default/doc/inst
 RUN chmod +x install_pfft.sh
 RUN ./install_pfft.sh
 
-RUN python -m pip install -U pip pdm==2.15.4 nox --user
+RUN python -m pip install -U pip pdm nox --user

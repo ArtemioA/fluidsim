@@ -18,8 +18,8 @@ keywords = [
 authors = [
     {name = "pierre.augier", email = "pierre.augier@univ-grenoble-alpes.fr"},
 ]
-version = '0.8.3'
-requires-python = ">=3.9"
+version = '0.8.4'
+requires-python = ">=3.10"
 dependencies = [
     "fluidsim-core>=0.8.1",
     "h5py",
@@ -40,10 +40,10 @@ classifiers = [
       "License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)",
       "Programming Language :: Python",
       "Programming Language :: Python :: 3",
-      "Programming Language :: Python :: 3.9",
       "Programming Language :: Python :: 3.10",
       "Programming Language :: Python :: 3.11",
       "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
 ]
 readme = "README.md"
 license = {text = "CECILL-2.1"}
@@ -137,7 +137,7 @@ ignore_package_warnings = ["ipython"]
 # because meson-python editable build needs the build dependencies
 build = [
     "meson-python",
-    "numpy",
+    "numpy>=2.0.0",
     # "transonic@hg+https://foss.heptapod.net/fluiddyn/transonic@default",
     "transonic>=0.6.2",
     "pythran>=0.9.7",
@@ -159,8 +159,9 @@ dev = [
     "pylint",
     "flit_core >=3.2,<4",
     "-e fluidsim-core @ file:///${PROJECT_ROOT}/lib",
-    # build dependency mpi4py
+    # build dependencies mpi4py
     "cython >=3.0",
+    "setuptools",
 ]
 
 [tool.pdm.scripts]

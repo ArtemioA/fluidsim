@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
     - name: apt install
@@ -18,7 +18,7 @@ jobs:
         sudo apt install -y libfftw3-dev libfftw3-mpi-dev \
           libhdf5-openmpi-dev openmpi-bin libopenmpi-dev \
           libopenblas-dev
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
@@ -26,14 +26,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pdm==2.15.4 nox
+        pip install pdm nox
     - name: Test with nox
       run: |
         nox -s test_without_fft_and_pythran
         mv .coverage/coverage.xml coverage_without_fft_and_pythran.xml
         nox -s test_with_fft_and_pythran
         mv .coverage/coverage.xml coverage_with_fft_and_pythran.xml
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: false # optional (default = false)
