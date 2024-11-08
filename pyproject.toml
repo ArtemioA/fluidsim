@@ -137,7 +137,7 @@ ignore_package_warnings = ["ipython"]
 # because meson-python editable build needs the build dependencies
 build = [
     "meson-python",
-    "numpy",
+    "numpy>=2.0.0",
     # "transonic@hg+https://foss.heptapod.net/fluiddyn/transonic@default",
     "transonic>=0.6.2",
     "pythran>=0.9.7",
