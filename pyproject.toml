@@ -159,8 +159,9 @@ dev = [
     "pylint",
     "flit_core >=3.2,<4",
     "-e fluidsim-core @ file:///${PROJECT_ROOT}/lib",
-    # build dependency mpi4py
+    # build dependencies mpi4py
     "cython >=3.0",
+    "setuptools",
 ]
 
 [tool.pdm.scripts]
