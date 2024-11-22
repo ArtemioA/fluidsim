@@ -18,4 +18,12 @@ generic base classes and utilities to build new solvers.
 
 """
 
-from ._version import __version__
+
+def __getattr__(name):
+    if name == "__version__":
+
+        from importlib import metadata
+
+        return metadata.version(__package__)
+
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
